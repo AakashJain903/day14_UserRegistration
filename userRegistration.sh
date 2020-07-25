@@ -19,11 +19,22 @@ function validation(){
 	echo $name
 }
 
+
 echo "Enter FirstName start with capital letter and has minimum 3 characters"
-read fisrtName
+read firstName
 pattern="^[A-Z]{1}[a-z]{2}" 
 validation $firstName $pattern
 
 echo "Enter LastName start with capital letter and has minimun 3 characters"
-read lastname
+read lastName
 validation $lastName $pattern
+
+echo "Enter Email Address...."
+read email
+pattern="^[a-zA-z0-9]{1,}([._+-][0-9a-zA-Z]+)*[@]{1}[0-9a-zA-Z]{1,}\.[a-zA-Z]{2,4}([.][a-zA-Z]{2}){0,1}"
+if [[ $email =~ $pattern ]]
+then
+	echo "Email address is valid"
+else
+	echo "Email address is invalid"
+fi
