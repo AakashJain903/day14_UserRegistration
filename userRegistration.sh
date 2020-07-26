@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function validation(){ 
-	name=$1
+	input=$1
 	pattern=$2
 	flag=0
 
@@ -13,10 +13,10 @@ function validation(){
 			flag=1
 		else
 			echo "It is not valid"
-			read name
+			read input
 		fi
 	done
-	echo $name
+	echo $input
 }
 
 
