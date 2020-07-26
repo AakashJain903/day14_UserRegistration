@@ -1,22 +1,22 @@
 #!/bin/bash -x
 
 function validation(){ 
-	name=$1
+	input=$1
 	pattern=$2
 	flag=0
 
 	while [ $flag -eq 0 ]
 	do
-		if [[ $name =~ $pattern ]]
+		if [[ $input =~ $pattern ]]
 		then
 			echo "It is Valid"
 			flag=1
 		else
 			echo "It is not valid"
-			read name
+			read input
 		fi
 	done
-	echo $name
+	echo $input
 }
 
 
