@@ -19,7 +19,6 @@ function validation(){
 	echo $input
 }
 
-
 echo "Enter FirstName start with capital letter and has minimum 3 characters"
 read firstName
 pattern="^([A-Z]{1})[a-z]{2}"
