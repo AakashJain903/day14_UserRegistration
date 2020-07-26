@@ -40,8 +40,7 @@ read mobile
 pattern="^[0-9]{2}[ ]{1}[0-9]{10}$"
 validation "$mobile" "$pattern"
 
-
-echo "Enter Your Password should be minimun 8 characters....."
+echo "Enter Your Password should have at least 1 Upper Case....."
 read pass
-pattern=".{8,}"
+pattern=".*[A-Z]{1,}.{6,}"
 validation $pass $pattern
