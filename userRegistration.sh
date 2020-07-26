@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 function validation(){ 
 	name=$1
@@ -22,30 +22,26 @@ function validation(){
 
 echo "Enter FirstName start with capital letter and has minimum 3 characters"
 read firstName
-pattern="^[A-Z]{1}[a-z]{2}" 
+pattern="^([A-Z]{1})[a-z]{2}"
 validation $firstName $pattern
 
 echo "Enter LastName start with capital letter and has minimun 3 characters"
 read lastName
+pattern="^([A-Z]{1})[a-z]{2}"
 validation $lastName $pattern
 
 echo "Enter Email Address...."
 read email
 pattern="^[a-zA-z0-9]{1,}([._+-][0-9a-zA-Z]+)*[@]{1}[0-9a-zA-Z]{1,}\.[a-zA-Z]{2,4}([.][a-zA-Z]{2,3}){0,1}"
-if [[ $email =~ $pattern ]]
-then
-	echo "Email address is valid"
-else
-	echo "Email address is invalid"
-fi
+validation $email $pattern
 
-echo "Enter a valid Mobile Number....."
+echo "Enter a valid Mobile Number with country code....."
 read mobile
 pattern="^[0-9]{2}[ ]{1}[0-9]{10}$"
-if [[ "$mobile" =~ $pattern ]]
-then
-	echo "Mobile number is valid"
-else
-	echo "Mobile number is invalid"
-fi
+validation "$mobile" "$pattern"
 
+
+echo "Enter Your Password should be minimun 8 characters....."
+read pass
+pattern=".{8,}"
+validation $pass $pattern
