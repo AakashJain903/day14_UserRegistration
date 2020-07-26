@@ -39,8 +39,8 @@ read mobile
 pattern="^[0-9]{2}[ ]{1}[0-9]{10}$"
 validation "$mobile" "$pattern"
 
-echo "Password should have at least 1 Upper Case....."
-echo "Enter your password"
+echo "Password should be minimum 8 charcter long"
+echo "Enter password.."
 read pass
-pattern=".*[A-Z]{1,}.{6,}"
+pattern="^.*([A-Z]{1,}).*([0-9]{1,}).{6,}"
 validation $pass $pattern
