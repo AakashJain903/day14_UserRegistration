@@ -31,10 +31,21 @@ validation $lastName $pattern
 
 echo "Enter Email Address...."
 read email
-pattern="^[a-zA-z0-9]{1,}([._+-][0-9a-zA-Z]+)*[@]{1}[0-9a-zA-Z]{1,}\.[a-zA-Z]{2,4}([.][a-zA-Z]{2}){0,1}"
+pattern="^[a-zA-z0-9]{1,}([._+-][0-9a-zA-Z]+)*[@]{1}[0-9a-zA-Z]{1,}\.[a-zA-Z]{2,4}([.][a-zA-Z]{2,3}){0,1}"
 if [[ $email =~ $pattern ]]
 then
 	echo "Email address is valid"
 else
 	echo "Email address is invalid"
 fi
+
+echo "Enter a valid Mobile Number....."
+read mobile
+pattern="^[0-9]{2}[ ]{1}[0-9]{10}$"
+if [[ "$mobile" =~ $pattern ]]
+then
+	echo "Mobile number is valid"
+else
+	echo "Mobile number is invalid"
+fi
+
