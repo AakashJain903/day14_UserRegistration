@@ -39,3 +39,9 @@ echo "Enter a valid Mobile Number....."
 read mobile
 pattern="^[0-9]{2}[ ]{1}[0-9]{10}$"
 validation "$mobile" "$pattern"
+
+echo "Enter Your Password should be minimun 8 characters....."
+read pass
+pattern=".{8,}"
+validation $pass $pattern
+
