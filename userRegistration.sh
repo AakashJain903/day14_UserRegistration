@@ -42,5 +42,5 @@ validation "$mobile" "$pattern"
 echo "Password should be minimum 8 charcter long"
 echo "Enter password.."
 read pass
-pattern="^.*([A-Z]{1,}).*([0-9]{1,}).{6,}"
+pattern="^.*([A-Z]{1,}).*[~!@#$%^&*]{1}([0-9]{1,}).{5,}"
 validation $pass $pattern
