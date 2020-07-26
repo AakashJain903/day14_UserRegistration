@@ -35,3 +35,7 @@ read email
 pattern="^[a-zA-z0-9]{1,}([._+-][0-9a-zA-Z]+)*[@]{1}[0-9a-zA-Z]{1,}\.[a-zA-Z]{2,4}([.][a-zA-Z]{2,3}){0,1}"
 validation $email $pattern
 
+echo "Enter a valid Mobile Number....."
+read mobile
+pattern="^[0-9]{2}[ ]{1}[0-9]{10}$"
+validation "$mobile" "$pattern"
