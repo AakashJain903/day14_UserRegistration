@@ -7,7 +7,7 @@ function validation(){
 
 	while [ $flag -eq 0 ]
 	do
-		if [[ $name =~ $pattern ]]
+		if [[ $input =~ $pattern ]]
 		then
 			echo "It is Valid"
 			flag=1
