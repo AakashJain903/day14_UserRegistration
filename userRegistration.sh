@@ -1,22 +1,22 @@
-#!/bin/bash
+#!/bin/bash -x
 
 function validation(){ 
-	name=$1
+	input=$1
 	pattern=$2
 	flag=0
 
 	while [ $flag -eq 0 ]
 	do
-		if [[ $name =~ $pattern ]]
+		if [[ $input =~ $pattern ]]
 		then
 			echo "It is Valid"
 			flag=1
 		else
 			echo "It is not valid"
-			read name
+			read input
 		fi
 	done
-	echo $name
+	echo $input
 }
 
 
@@ -32,9 +32,4 @@ validation $lastName $pattern
 echo "Enter Email Address...."
 read email
 pattern="^[a-zA-z0-9]{1,}([._+-][0-9a-zA-Z]+)*[@]{1}[0-9a-zA-Z]{1,}\.[a-zA-Z]{2,4}([.][a-zA-Z]{2,3}){0,1}$"
-if [[ $email =~ $pattern ]]
-then
-	echo "Email address is valid"
-else
-	echo "Email address is invalid"
-fi
+validation $email $pattern
